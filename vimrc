@@ -30,31 +30,6 @@ map <leader>tq :tabp<cr>
 map <leader>te :tabn<cr>
 
 " ---------------------------------------
-" Functions                            
-" ---------------------------------------
-function! CreatingFile(type)
-	%s/{{username}}/0strezz/g
-	%s/{{date}}/\=strftime('%a %e %b, %G: %T')/g
-	normal! G
-endfunction
-
-" ---------------------------------------
-" Augroups                             
-" ---------------------------------------
-augroup Templates
-	autocmd!
-	autocmd BufNewFile *.java call CreatingFile('slash')
-	autocmd BufNewFile *.c    call CreatingFile('slash')
-	autocmd BufNewFile *.cpp  call CreatingFile('slash')
-	autocmd BufNewFile *.rust call CreatingFile('slash')
-	autocmd BufNewFile *.sql  call CreatingFile('slash')
-	autocmd BufNewFile *.py   call CreatingFile('hash')
-	autocmd BufNewFile *.sh   call CreatingFile('hash')
-	autocmd BufNewFile *.s    call CreatingFile('hash')
-	autocmd BufNewFile *.asm  call CreatingFile('hash')
-augroup END
-
-" ---------------------------------------
 " Others                               
 " ---------------------------------------
 try
@@ -62,3 +37,7 @@ try
 	set undofile
 catch
 endtry
+
+set background=dark
+color retrobox
+
