@@ -33,11 +33,8 @@ map <leader>te :tabn<cr>
 " Functions                            
 " ---------------------------------------
 function! CreatingFile(type)
-	execute '0r ~/.vim/templates/' . a:type
-
 	%s/{{username}}/0strezz/g
 	%s/{{date}}/\=strftime('%a %e %b, %G: %T')/g
-
 	normal! G
 endfunction
 

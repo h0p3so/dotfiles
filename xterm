@@ -1,0 +1,6 @@
+Xterm*saveLines: 2000
+
+XTerm*VT100.Translations: #override \n\
+	Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
