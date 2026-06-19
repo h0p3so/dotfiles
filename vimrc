@@ -3,7 +3,6 @@ let mapleader=","
 " ---------------------------------------
 " Standard and common configurations
 " ---------------------------------------
-set number
 set hlsearch
 set wildmenu
 set ruler
@@ -38,6 +37,12 @@ try
 catch
 endtry
 
-set background=dark
-color retrobox
+color quiet
 
+fun! Set8TabWidth()
+	set tabstop=8
+	set shiftwidth=8
+endfun
+
+autocmd BufNewFile *.S,*.s,*.asm,makefile :call Set8TabWidth()
+autocmd BufReadPre *.S,*.s,*.asm,makefile :call Set8TabWidth()
